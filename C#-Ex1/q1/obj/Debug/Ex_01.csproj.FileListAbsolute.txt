@@ -1,0 +1,6 @@
+C:\Users\shire\OneDrive\Documents\GitHub\Csharp-Ex1\C#-Ex1\q1\obj\Debug\Ex_01.csproj.AssemblyReference.cache
+C:\Users\shire\OneDrive\Documents\GitHub\Csharp-Ex1\C#-Ex1\q1\obj\Debug\Ex_01.csproj.CoreCompileInputs.cache
+C:\Users\shire\OneDrive\Documents\GitHub\Csharp-Ex1\C#-Ex1\q1\bin\Debug\q1.exe
+C:\Users\shire\OneDrive\Documents\GitHub\Csharp-Ex1\C#-Ex1\q1\bin\Debug\q1.pdb
+C:\Users\shire\OneDrive\Documents\GitHub\Csharp-Ex1\C#-Ex1\q1\obj\Debug\q1.exe
+C:\Users\shire\OneDrive\Documents\GitHub\Csharp-Ex1\C#-Ex1\q1\obj\Debug\q1.pdb
