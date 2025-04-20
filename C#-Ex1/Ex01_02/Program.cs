@@ -62,6 +62,7 @@ namespace Ex01_02
                 string line = $"{letter} {new string(' ', numOfSpaces)}|{io_currentNum}|";
                 
                 System.Console.WriteLine(line);
+                System.Console.WriteLine();
             }
         } 
     }
