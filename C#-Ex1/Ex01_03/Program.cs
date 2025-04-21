@@ -11,6 +11,7 @@ namespace Ex01_03
         public static void Main()
         {
             int sizeFromUser;
+
             while (true)
             {
                 Console.WriteLine("Enter tree size (4-15)");
@@ -28,6 +29,7 @@ namespace Ex01_03
 
             int maxRowIndex = sizeFromUser - 3;
             int currentNum = 1;
+
             Ex01_02.Program.PrintTree(ref currentNum, maxRowIndex);
         }
     }
