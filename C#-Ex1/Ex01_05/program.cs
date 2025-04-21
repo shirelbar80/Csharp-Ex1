@@ -8,9 +8,11 @@ namespace Ex01_05
 {
     internal class Program
     {
+        private const int k_ValidLengthOfANumber = 8;
+
         public static void Main() {
 
-            Console.WriteLine("Please enter a number of 8 digits: ");
+            Console.WriteLine(string.Format("Please enter a number of {0} digits: ", k_ValidLengthOfANumber));
 
             string userString = Console.ReadLine();
 
@@ -54,37 +56,37 @@ namespace Ex01_05
         }
 
 
-        private static int generateSmallerDigitsInfo(string io_userString, out string io_digitsList)
+        private static int generateSmallerDigitsInfo(string i_userString, out string o_digitsList)
         {
-            char firstDigitChar = io_userString[0];
+            char firstDigitChar = i_userString[0];
             int firstDigit = firstDigitChar - '0';
             string smallerDigits = "";
             int totalSmallerDigits = 0;
 
-            for (int currentChar = 1; currentChar < io_userString.Length; currentChar++)
+            for (int currentChar = 1; currentChar < i_userString.Length; currentChar++)
             {
-                int currentDigit = io_userString[currentChar] - '0';
+                int currentDigit = i_userString[currentChar] - '0';
 
                 if (currentDigit < firstDigit)
                 {
-                    smallerDigits += io_userString[currentChar];
+                    smallerDigits += i_userString[currentChar];
                     totalSmallerDigits++;
                 }
             }
 
-            io_digitsList = smallerDigits;
+            o_digitsList = smallerDigits;
 
             return totalSmallerDigits;
         }
 
 
-        private static string digitsDividedBy3WithoutRemainder(string io_userString)
+        private static string digitsDividedBy3WithoutRemainder(string i_userString)
         {
             StringBuilder result = new StringBuilder();
 
-            for (int i = 0; i < io_userString.Length; i++)
+            for (int i = 0; i < i_userString.Length; i++)
             {
-                char currentChar = io_userString[i];
+                char currentChar = i_userString[i];
 
                 if (char.IsDigit(currentChar))
                 {
@@ -101,14 +103,14 @@ namespace Ex01_05
 
 
 
-        private static int digitDifferenceFromBiggestToSmallest(string io_userString)
+        private static int digitDifferenceFromBiggestToSmallest(string i_userString)
         {
             int maxDigit = 0;
             int minDigit = 9;
 
-            for (int currentChar = 0; currentChar < io_userString.Length; currentChar++)//find the smallest and biggest digits
+            for (int currentChar = 0; currentChar < i_userString.Length; currentChar++)//find the smallest and biggest digits
             {
-                int digit = io_userString[currentChar] - '0';
+                int digit = i_userString[currentChar] - '0';
 
                 maxDigit = Math.Max(maxDigit, digit);
                 
@@ -119,18 +121,19 @@ namespace Ex01_05
             return (maxDigit - minDigit);
         }
 
-        private static int countTheMostFrequentDigit(string io_userString, out char o_mostFrequentDigit)
+        private static int countTheMostFrequentDigit(string i_userString, out char o_mostFrequentDigit)
         {
             int maxCountOfDigit = 0;
+
             o_mostFrequentDigit = '0';
 
             for (char currentDigit = '0'; currentDigit <= '9'; currentDigit++) // check each digit character
             {
                 int currentCountOfDigit = 0;
 
-                for (int currentChar = 0; currentChar < io_userString.Length; currentChar++)
+                for (int currentChar = 0; currentChar < i_userString.Length; currentChar++)
                 {
-                    if (io_userString[currentChar] == currentDigit)
+                    if (i_userString[currentChar] == currentDigit)
                         currentCountOfDigit++;
                 }
 
@@ -145,22 +148,24 @@ namespace Ex01_05
         }
 
 
-        private static bool isValidString(string io_userString) {
+        private static bool isValidString(string i_userString) {
         
-            if(io_userString.Length != 8) //not the good length
+            bool isStringValid = true;
+
+            if(i_userString.Length != k_ValidLengthOfANumber) //not the good length
             {
-                return false; 
+                isStringValid = false; 
             }
 
-            for (int currentChar = 0; currentChar < io_userString.Length; currentChar++)
+            for (int currentChar = 0; currentChar < i_userString.Length; currentChar++)
             {
-                if (!Char.IsDigit(io_userString[currentChar])) //not all are digits
+                if (!Char.IsDigit(i_userString[currentChar])) //not all are digits
                 {
-                    return false;
+                    isStringValid = false;
                 }
             }
 
-            return true;  //all good
+            return isStringValid;  //all good
 
         }
 

@@ -24,7 +24,7 @@ namespace Ex01_02
         public static void PrintTreeRec(int i_currentRow, ref int io_currentNum, int io_maxRowIndex)
         {
             bool v_isCurrentRawLargerThanMaxRow = i_currentRow > io_maxRowIndex;
-             char letter = (char)('A' + i_currentRow);
+            char letter = (char)('A' + i_currentRow);
             int numOfSpaces = io_maxRowIndex - i_currentRow + 1;
             int amountOfNumber = i_currentRow + i_currentRow + 1;
             StringBuilder sb = new StringBuilder();
@@ -62,6 +62,7 @@ namespace Ex01_02
                 string line = $"{letter} {new string(' ', numOfSpaces)}|{io_currentNum}|";
                 
                 System.Console.WriteLine(line);
+                System.Console.WriteLine();
             }
         } 
     }
