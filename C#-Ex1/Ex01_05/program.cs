@@ -22,39 +22,32 @@ namespace Ex01_05
                 userString = Console.ReadLine();
             }
 
-            int totalOfSmallerDigits = generateSmallerDigitsInfo(userString, out string stringOfSmallerDigits);
-
-                    
+            int totalOfSmallerDigits = generateSmallerDigitsInfo(userString, out string stringOfSmallerDigits);        
             Console.Write("Left digit is: "+ userString[0] + ". Digits that are smaller: ");
+            
             for (int currentChar = 0; currentChar < totalOfSmallerDigits; currentChar++)
             {
                 Console.Write(stringOfSmallerDigits[currentChar]+ ", ");
             }
+
             if(totalOfSmallerDigits == 0)
             {
                 Console.Write("None, ");
             }
+
             Console.WriteLine("A total of: " + totalOfSmallerDigits);
-            
-
             string stringOfDigitsDividedBy3WithoutRemainder = digitsDividedBy3WithoutRemainder(userString);
-
             Console.Write("The digits that are devided by 3 without remainder: ");
             for (int currentChar = 0; currentChar < stringOfDigitsDividedBy3WithoutRemainder.Length; currentChar++)
             {
                 Console.Write(stringOfDigitsDividedBy3WithoutRemainder[currentChar] + ", ");
             }
+
             Console.WriteLine("A total of: " + stringOfDigitsDividedBy3WithoutRemainder.Length);
-
-
             Console.WriteLine("The difference between the biggest digit to the smallest digit is: " + digitDifferenceFromBiggestToSmallest(userString));
-
             int countOfTheMostFrequentDigit = countTheMostFrequentDigit(userString, out char mostFrequentDigit);
             Console.WriteLine("The Digit that appears the most times is: " + mostFrequentDigit + " (appears " + countOfTheMostFrequentDigit + " times)");
-
-
         }
-
 
         private static int generateSmallerDigitsInfo(string i_userString, out string o_digitsList)
         {
@@ -101,8 +94,6 @@ namespace Ex01_05
             return result.ToString();
         }
 
-
-
         private static int digitDifferenceFromBiggestToSmallest(string i_userString)
         {
             int maxDigit = 0;
@@ -113,9 +104,7 @@ namespace Ex01_05
                 int digit = i_userString[currentChar] - '0';
 
                 maxDigit = Math.Max(maxDigit, digit);
-                
                 minDigit = Math.Min(minDigit, digit);
-               
             }
 
             return (maxDigit - minDigit);
@@ -166,8 +155,6 @@ namespace Ex01_05
             }
 
             return isStringValid;  //all good
-
         }
-
     }
 }

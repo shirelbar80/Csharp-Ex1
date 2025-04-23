@@ -31,24 +31,16 @@ namespace Ex01_01
                     binaryNumbers[currentBinaryNumber] = Console.ReadLine();//read binary number
 
                 }
-
             }
 
             int[] decimalNumbers = binaryToDecimal(binaryNumbers);
-
             printInDescendingOrder(decimalNumbers);
-
             //average of the decimal numbers
             Console.WriteLine("\nAverage: " + decimalNumbers.Average());
-
             printLargestSequenceOfOnes(binaryNumbers);
-
             printNumberOfTransitions(binaryNumbers);
-
             printBinaryNumberWithTheMostNumberOfOnes(binaryNumbers);
-
             printTotalNumberOfOnes(binaryNumbers);
-
         }
 
         static private bool validBinaryNumber(string i_binaryNumber) //check if the binary number is valid for the program
